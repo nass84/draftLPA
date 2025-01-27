@@ -1,0 +1,106 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Enter donor's date of birth – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% if dobError %}
+        {{ govukErrorSummary({
+          errorList: [
+            { text: "Enter your date of birth", href: "#dob-day" }
+          ]
+        }) }}
+      {% endif %}
+
+      <h1 class="govuk-heading-l">Enter the donor’s date of birth</h1>
+
+      <p class="govuk-body">
+        Enter the donor’s date of birth. This is the person making the Lasting Power of Attorney (LPA).
+      </p>
+
+      <form class="form" action="/path/of/next/page" method="post">
+
+        <!-- Date of Birth Field -->
+        <div class="govuk-form-group {% if dobError %}govuk-form-group--error{% endif %}">
+          <fieldset class="govuk-fieldset" role="group" aria-describedby="dob-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              Date of birth
+            </legend>
+            <div id="dob-hint" class="govuk-hint">
+              Enter the date in the format day, month, year. For example, 27 3 1980.
+            </div>
+
+            {% if dobError %}
+              <span class="govuk-error-message">
+                <span class="govuk-visually-hidden">Error:</span> Enter your date of birth
+              </span>
+            {% endif %}
+
+            <div class="govuk-date-input" id="dob">
+              <!-- Day Input -->
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="dob-day">Day</label>
+                  <input 
+                    class="govuk-input govuk-date-input__input govuk-input--width-2" 
+                    id="dob-day" 
+                    name="dob-day" 
+                    type="text" 
+                    inputmode="numeric">
+                </div>
+              </div>
+              
+              <!-- Month Input -->
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="dob-month">Month</label>
+                  <input 
+                    class="govuk-input govuk-date-input__input govuk-input--width-2" 
+                    id="dob-month" 
+                    name="dob-month" 
+                    type="text" 
+                    inputmode="numeric">
+                </div>
+              </div>
+              
+              <!-- Year Input -->
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="dob-year">Year</label>
+                  <input 
+                    class="govuk-input govuk-date-input__input govuk-input--width-4" 
+                    id="dob-year" 
+                    name="dob-year" 
+                    type="text" 
+                    inputmode="numeric">
+                </div>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        {{ govukButton({
+          text: "Continue",
+          href: "/name", 
+          type: "submit"
+          
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

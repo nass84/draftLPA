@@ -1,0 +1,132 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        You’ve completed this section
+      </h1>
+
+      <p class="govuk-body">
+        You’ve finished entering your details for this section of your application. Check the information below to make sure it’s correct before moving onto the next section.
+      </p>
+
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Full name"
+            },
+            value: {
+              text: "John Doe"
+            },
+            actions: {
+              items: [
+                {
+                  href: "/change-name",
+                  text: "Change",
+                  visuallyHiddenText: "Full name"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Date of birth"
+            },
+            value: {
+              text: "27 March 1980"
+            },
+            actions: {
+              items: [
+                {
+                  href: "/change-dob",
+                  text: "Change",
+                  visuallyHiddenText: "Date of birth"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Address"
+            },
+            value: {
+              html: "123 Example Street<br>Example Town<br>EX4 3PL"
+            },
+            actions: {
+              items: [
+                {
+                  href: "/change-address",
+                  text: "Change",
+                  visuallyHiddenText: "Address"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Email address"
+            },
+            value: {
+              text: "john.doe@example.com"
+            },
+            actions: {
+              items: [
+                {
+                  href: "/change-email",
+                  text: "Change",
+                  visuallyHiddenText: "Email address"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      <h2 class="govuk-heading-m">
+        Save your progress or move onto the next section
+      </h2>
+
+      <p class="govuk-body">
+        If you need more time, you can save your progress and come back later. When you're ready, click "Continue" to start the next section of your application.
+      </p>
+
+      <form action="/task-list" method="post" novalidate>
+        <div class="govuk-button-group">
+          {{ govukButton({
+            text: "Continue",
+            type: "submit",
+            attributes: {
+              name: "action",
+              value: "continue",
+              href: "y"
+
+            }
+          }) }}
+          {{ govukButton({
+            text: "Save for later",
+            classes: "govuk-button--secondary",
+            attributes: {
+              name: "action",
+              value: "save-for-later"
+            }
+          }) }}
+        </div>
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,76 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Enter donor's name – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">Enter the donor’s name</h1>
+
+      <form class="form" action="/path/of/next/page" method="post">
+
+        <p class="govuk-body">
+          Enter the full name of the donor. This is the person making the Lasting Power of Attorney (LPA).
+        </p>
+
+        <!-- Full Name Field -->
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="donor-full-name">
+            Full name
+          </label>
+          <span id="donor-full-name-hint" class="govuk-hint">
+            Enter the donor’s full name as it appears on official documents.
+          </span>
+          <input 
+            class="govuk-input" 
+            id="donor-full-name" 
+            name="donorFullName" 
+            type="text" 
+            spellcheck="false" 
+            autocomplete="name" 
+            aria-describedby="donor-full-name-hint">
+        </div>
+
+        <!-- Other Names Field -->
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="donor-other-names">
+            Other names the donor is known by (if any)
+          </label>
+          <span id="donor-other-names-hint" class="govuk-hint">
+            Include any names the donor uses or has used in the past, such as a maiden name or an alternative spelling.
+          </span>
+          <input 
+            class="govuk-input" 
+            id="donor-other-names" 
+      
+            name="donorOtherNames" 
+            type="text" 
+            spellcheck="false" 
+            autocomplete="off" 
+            value="{{ data['donorOtherNames'] | default('') }}" 
+            aria-describedby="donor-other-names-hint">
+        </div>
+
+        {{ govukButton({
+          text: "Continue",
+          href: "/address", 
+          type: "submit"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

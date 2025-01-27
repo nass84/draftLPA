@@ -1,0 +1,83 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Create a Lasting Power of Attorney for Financial Decisions – GOV.UK
+{% endblock %}
+
+{% block header %}
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    items: [
+      { text: "Home", href: "/" },
+      { text: "Lasting Power of Attorney", href: "#" },
+      { text: "Financial Decisions" }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">Create a Lasting Power of Attorney for Financial Decisions</h1>
+
+    <p>A Lasting Power of Attorney (LPA) lets you choose trusted people (your attorneys) to manage your finances if you’re unable to.</p>
+    <p>You can choose family, friends, or professionals to act on your behalf.</p>
+
+    <h2 class="govuk-heading-l">What your attorneys can do</h2>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>Manage your bank and savings accounts</li>
+      <li>Pay bills and handle expenses</li>
+      <li>Make or sell investments</li>
+      <li>Buy or sell property, including your home</li>
+    </ul>
+
+    <h2 class="govuk-heading-l">Who can make an LPA?</h2>
+    <p>You (the donor) can create an LPA if you:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>Are 18 or over</li>
+      <li>Have the <a href="#">mental capacity</a> to make decisions when you set it up</li>
+    </ul>
+
+    <h2 class="govuk-heading-l">What you’ll need</h2>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>Your full name, address, and date of birth</li>
+      <li>Details of <a href> your attorneys </a> and any replacement attorneys</li>
+      <li>A <a href="#">certificate provider</a> to confirm your understanding</li>
+      <li>A witness to sign the form</li>
+      <li>£82 for the registration fee (or proof of <a href=#>fee reduction eligibility)</li>
+    </ul>
+
+   
+    {{ govukButton({
+      text: "Start now",
+      href: "/start-3",  
+      isStartButton: true
+    }) }}
+
+    
+   
+  </div>
+
+  <div class="govuk-grid-column-one-third">
+    <aside class="govuk-prototype-kit-common-templates-related-items" role="complementary">
+      <h2 class="govuk-heading-m" id="related-links-title">Related links</h2>
+      <nav role="navigation" aria-labelledby="related-links-title">
+        <ul class="govuk-list govuk-list--spaced">
+          <li><a href="#">LPA guidance and forms</a></li>
+          <li><a href="#">Mental capacity guidance</a></li>
+          <li><a href="#">How to choose your attorneys</a></li>         
+          <li><a href="#">Who can be a certificate provider for my LPA?</a></li>
+          <li><a href="#">Can I get help with the fee?</a></li>
+
+        </ul>
+      </nav>
+    </aside>
+  </div>
+</div>
+
+{% endblock %}

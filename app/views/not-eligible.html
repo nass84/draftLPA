@@ -1,0 +1,33 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Eligibility check – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        You are not eligible to use this service
+      </h1>
+      <p class="govuk-body">
+        You must be 18 or over to use this service. Based on the information you provided, you are not eligible to continue.
+      </p>
+      <p class="govuk-body">
+        If this is a mistake, you can go back and re-enter your date of birth.
+      </p>
+      <a href="/dob" class="govuk-button govuk-button--secondary">
+        Re-enter date of birth
+      </a>
+
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,197 @@
+{% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
+
+{% block pageTitle %}
+  Step by step navigation template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block pageScripts %}
+  <script type="text/javascript">
+    var $element = document.querySelector('#step-by-step-navigation')
+    var stepByStepNavigation = new GOVUK.Modules.AppStepNav($element).init()
+  </script>
+{% endblock %}
+
+{% block beforeContent %}
+  <div class="govuk-breadcrumbs">
+    <ol class="govuk-breadcrumbs__list">
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="https://www.gov.uk">Home</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="#">Lasting Power of Attorney</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link">Financial Decisions</a>
+      </li>
+    </ol>
+  </div>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+      How to Apply for a Financial Lasting Power of Attorney
+    </h1>
+
+    <p>
+      This service will help you create and register a Financial Lasting Power of Attorney (LPA). It takes about 30 minutes to complete, and you can save your progress at the end of each step and return to it later.
+    </p>
+
+    <div data-module="appstepnav" id="step-by-step-navigation" class="app-step-nav js-hidden app-step-nav--large" data-show-text="Show" data-hide-text="Hide" data-show-all-text="Show all steps" data-hide-all-text="Hide all steps">
+      <ol class="app-step-nav__steps">
+        <li class="app-step-nav__step js-step" id="enter-donor-details">
+          <div class="app-step-nav__header js-toggle-panel" data-position="1">
+            <h2 class="app-step-nav__title">
+              <span class="app-step-nav__circle app-step-nav__circle--number">
+                <span class="app-step-nav__circle-inner">
+                  <span class="app-step-nav__circle-background">
+                    <span class="govuk-visually-hidden govuk-!-display-none-print">Step</span> 1<span class="govuk-visually-hidden govuk-!-display-none-print" aria-hidden="true">:</span>
+                  </span>
+                </span>
+              </span>
+
+              <span class="js-step-title">
+                <a href="/donor-details">Enter the donor’s details</a>
+              </span>
+            </h2>
+          </div>
+
+          <div class="app-step-nav__panel js-panel" id="step-panel-enter-donor-details">
+            <p class="app-step-nav__paragraph">Provide the full name, date of birth, and address of the donor (the person making the LPA).</p>
+          </div>
+
+        </li>
+
+        <li class="app-step-nav__step js-step" id="choose-attorneys">
+          <div class="app-step-nav__header js-toggle-panel" data-position="2">
+            <h2 class="app-step-nav__title">
+              <span class="app-step-nav__circle app-step-nav__circle--number">
+                <span class="app-step-nav__circle-inner">
+                  <span class="app-step-nav__circle-background">
+                    <span class="govuk-visually-hidden govuk-!-display-none-print">Step</span> 2<span class="govuk-visually-hidden govuk-!-display-none-print" aria-hidden="true">:</span>
+                  </span>
+                </span>
+              </span>
+
+              <span class="js-step-title">
+                <a href="/choose-attorneys">Choose attorneys</a>
+              </span>
+            </h2>
+          </div>
+
+          <div class="app-step-nav__panel js-panel" id="step-panel-choose-attorneys">
+            <p class="app-step-nav__paragraph">Add one or more attorneys who will manage financial decisions on behalf of the donor.</p>
+          </div>
+
+        </li>
+
+        <li class="app-step-nav__step js-step" id="certificate-provider">
+          <div class="app-step-nav__header js-toggle-panel" data-position="3">
+            <h2 class="app-step-nav__title">
+              <span class="app-step-nav__circle app-step-nav__circle--number">
+                <span class="app-step-nav__circle-inner">
+                  <span class="app-step-nav__circle-background">
+                    <span class="govuk-visually-hidden govuk-!-display-none-print">Step</span> 3<span class="govuk-visually-hidden govuk-!-display-none-print" aria-hidden="true">:</span>
+                  </span>
+                </span>
+              </span>
+
+              <span class="js-step-title">
+                <a href="/certificate-provider">Confirm the certificate provider</a>
+              </span>
+            </h2>
+          </div>
+
+          <div class="app-step-nav__panel js-panel" id="step-panel-certificate-provider">
+            <p class="app-step-nav__paragraph">Choose someone to confirm that the donor understands the LPA and is making it willingly.</p>
+          </div>
+
+        </li>
+
+        <li class="app-step-nav__step js-step" id="provide-witness-signatures">
+          <div class="app-step-nav__header js-toggle-panel" data-position="4">
+            <h2 class="app-step-nav__title">
+              <span class="app-step-nav__circle app-step-nav__circle--number">
+                <span class="app-step-nav__circle-inner">
+                  <span class="app-step-nav__circle-background">
+                    <span class="govuk-visually-hidden govuk-!-display-none-print">Step</span> 4<span class="govuk-visually-hidden govuk-!-display-none-print" aria-hidden="true">:</span>
+                  </span>
+                </span>
+              </span>
+
+              <span class="js-step-title">
+                <a href="/witness-signatures">Provide witness signatures</a>
+              </span>
+            </h2>
+          </div>
+
+          <div class="app-step-nav__panel js-panel" id="step-panel-provide-witness-signatures">
+            <p class="app-step-nav__paragraph">Arrange for the donor and attorneys to sign the LPA in the presence of witnesses.</p>
+          </div>
+
+        </li>
+
+        <li class="app-step-nav__step js-step" id="review-and-submit">
+          <div class="app-step-nav__header js-toggle-panel" data-position="5">
+            <h2 class="app-step-nav__title">
+              <span class="app-step-nav__circle app-step-nav__circle--number">
+                <span class="app-step-nav__circle-inner">
+                  <span class="app-step-nav__circle-background">
+                    <span class="govuk-visually-hidden govuk-!-display-none-print">Step</span> 5<span class="govuk-visually-hidden govuk-!-display-none-print" aria-hidden="true">:</span>
+                  </span>
+                </span>
+              </span>
+
+              <span class="js-step-title">
+                <a href="/review-and-submit">Print and send to the Office of the Public Guardian</a>
+              </span>
+            </h2>
+          </div>
+
+          <div class="app-step-nav__panel js-panel" id="step-panel-review-and-submit">
+            <p class="app-step-nav__paragraph">Check all the details, pay the registration fee, and submit the LPA application to the Office of the Public Guardian.</p>
+          </div>
+
+        </li>
+      </ol>
+
+<a href="/donor" role="button" draggable="false" class="govuk-button govuk-button--start">
+  Start now
+  <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" aria-hidden="true" focusable="false">
+    <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z"></path>
+  </svg>
+</a>
+
+<h3 class="govuk-heading-m">Help applying online</h3>
+<p>The Office of the Public Guardian can guide you through the online process and answer questions. This service may cost extra. Visit <a href="https://www.gov.uk/power-of-attorney">GOV.UK</a> for details.</p>
+
+<h3 class="govuk-heading-m">Paper forms</h3>
+<p>To apply by post, download forms from <a href="https://www.gov.uk/power-of-attorney">GOV.UK</a> or call <strong>0300 456 0300</strong>. Send completed forms to the Office of the Public Guardian. Postal applications take longer; pay by cheque, debit, or credit card.</p></div>
+
+
+ </div>
+</div>
+
+<div class="govuk-grid-column-one-third">
+  <aside class="govuk-prototype-kit-common-templates-related-items" role="complementary">
+    <h2 class="govuk-heading-m" id="related-links-title">Related links</h2>
+    <nav role="navigation" aria-labelledby="related-links-title">
+      <ul class="govuk-list govuk-list--spaced">
+        <li><a href="#">Who can be a donor</a></li>
+        <li><a href="#">How to choose attorneys</a></li>
+        <li><a href="#">Who can be a certificate provider</a></li>         
+        <li><a href="#">Who can witness my LPA</a></li>
+        <li><a href="#">Download LPA Forms and Guidance</a></li>
+      </ul>
+    </nav>
+  </aside>
+</div>
+
+{% endblock %}

@@ -1,0 +1,121 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Task list – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">{{ serviceName }}</h1>
+
+      <p class="govuk-body">
+        You have completed the first section. Now, start the next section to continue your application.
+      </p>
+
+      <h2 class="govuk-heading-m">First section – Completed</h2>
+
+      {% set completedStatus = {
+        text: "Completed"
+      } %}
+
+      {% set incompleteStatus = {
+        tag: {
+          text: "Incomplete",
+          classes: "govuk-tag--blue"
+        }
+      } %}
+
+      {{ govukTaskList({
+        idPrefix: "first-section",
+        items: [
+          {
+            title: {
+              text: "Provide your full name"
+            },
+            href: "/name",
+            status: completedStatus
+          },
+          {
+            title: {
+              text: "Enter your date of birth"
+            },
+            href: "/dob",
+            status: completedStatus
+          },
+          {
+            title: {
+              text: "Provide your address"
+            },
+            href: "/address",
+            status: completedStatus
+          },
+          {
+            title: {
+              text: "Provide your email address"
+            },
+            href: "/email",
+            status: completedStatus
+          }
+        ]
+      }) }}
+
+      <h2 class="govuk-heading-m govuk-!-margin-top-5">Next section – In Progress</h2>
+
+      <p class="govuk-body">
+        Complete the tasks in this section to continue your application.
+      </p>
+
+      {{ govukTaskList({
+        idPrefix: "second-section",
+        items: [
+          {
+            title: {
+              text: "Add attorney details"
+            },
+            href: "/attorney-details",
+            status: incompleteStatus
+          },
+          {
+            title: {
+              text: "Add replacement attorney details"
+            },
+            href: "/replacement-attorney-details",
+            status: incompleteStatus
+          },
+          {
+            title: {
+              text: "Review preferences and instructions"
+            },
+            href: "/preferences-instructions",
+            status: incompleteStatus
+          },
+          {
+            title: {
+              text: "Confirm and sign the form"
+            },
+            href: "/confirm-sign",
+            status: incompleteStatus
+          }
+        ]
+      }) }}
+
+      <div class="govuk-!-margin-top-5 govuk-button-group">
+        {{ govukButton({
+          text: "Continue to next section",
+          href: "/attorney-details"
+        }) }}
+        {{ govukButton({
+          text: "Save for later",
+          classes: "govuk-button--secondary",
+          href: "/save-for-later"
+        }) }}
+      </div>
+
+    </div>
+  </div>
+{% endblock %}

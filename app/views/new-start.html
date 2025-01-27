@@ -1,0 +1,133 @@
+{% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
+
+{% block pageTitle %}
+  Create a Lasting Power of Attorney – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+  {{ govukHeader({
+    serviceName: "Lasting Power of Attorney",
+    serviceUrl: "/"
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+  <div class="app-step-nav-header">
+    <span class="app-step-nav-header__part-of">Part of</span>
+    <a class="app-step-nav-header__title" href="#">
+      Create a Lasting Power of Attorney: step by step
+    </a>
+  </div>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <!-- Main Content -->
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">Create a Lasting Power of Attorney for Financial Decisions</h1>
+    <p class="govuk-body">A Lasting Power of Attorney (LPA) lets you choose trusted people (your attorneys) to manage your finances if you’re unable to.</p>
+    <p class="govuk-body">You can choose family, friends, or professionals to act on your behalf.</p>
+
+    <h2 class="govuk-heading-l">What your attorneys can do</h2>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>Manage your bank and savings accounts</li>
+      <li>Pay bills and handle expenses</li>
+      <li>Make or sell investments</li>
+      <li>Buy or sell property, including your home</li>
+    </ul>
+
+    <h2 class="govuk-heading-l">Who can make an LPA?</h2>
+    <p class="govuk-body">You (the donor) can create an LPA if you:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>Are 18 or over</li>
+      <li>Have the <a href="#" class="govuk-link">mental capacity</a> to make decisions when you set it up</li>
+    </ul>
+
+    <h2 class="govuk-heading-l">What you’ll need</h2>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>Your full name, address, and date of birth</li>
+      <li>Details of your attorneys and any replacement attorneys</li>
+      <li>A certificate provider to confirm your understanding</li>
+      <li>A witness to sign the form</li>
+      <li>£82 for the registration fee (or proof of fee reduction eligibility)</li>
+    </ul>
+    <p class="govuk-body">It takes about 15 minutes to complete your application online.</p>
+
+    <a href="/step-1" role="button" draggable="false" class="govuk-button govuk-button--start">
+      Start now
+      <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" aria-hidden="true" focusable="false">
+        <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z"></path>
+      </svg>
+    </a>
+  </div>
+
+  <!-- Step-by-Step Sidebar -->
+  <div class="govuk-grid-column-one-third">
+    <div class="app-step-nav-related">
+      <h2 class="app-step-nav-related__heading">
+        <span class="app-step-nav-related__pretitle">Part of</span>
+        <a href="#">Create a Lasting Power of Attorney: step by step</a>
+      </h2>
+    </div>
+
+    <div data-module="appstepnav" id="step-by-step-navigation" class="app-step-nav js-hidden" data-show-text="Show" data-hide-text="Hide" data-show-all-text="Show all steps" data-hide-all-text="Hide all steps">
+      <ol class="app-step-nav__steps">
+        <li class="app-step-nav__step js-step app-step-nav__step--active" aria-current="step">
+          <div class="app-step-nav__header js-toggle-panel" data-position="1">
+            <h3 class="app-step-nav__title">
+              <span class="app-step-nav__circle app-step-nav__circle--number">
+                <span class="app-step-nav__circle-inner">1</span>
+              </span>
+              Enter the donor’s details
+            </h3>
+          </div>
+        </li>
+        <li class="app-step-nav__step js-step">
+          <div class="app-step-nav__header js-toggle-panel" data-position="2">
+            <h3 class="app-step-nav__title">
+              <span class="app-step-nav__circle app-step-nav__circle--number">
+                <span class="app-step-nav__circle-inner">2</span>
+              </span>
+              Add attorneys
+            </h3>
+          </div>
+        </li>
+        <li class="app-step-nav__step js-step">
+          <div class="app-step-nav__header js-toggle-panel" data-position="3">
+            <h3 class="app-step-nav__title">
+              <span class="app-step-nav__circle app-step-nav__circle--number">
+                <span class="app-step-nav__circle-inner">3</span>
+              </span>
+              Confirm certificate provider
+            </h3>
+          </div>
+        </li>
+        <li class="app-step-nav__step js-step">
+          <div class="app-step-nav__header js-toggle-panel" data-position="4">
+            <h3 class="app-step-nav__title">
+              <span class="app-step-nav__circle app-step-nav__circle--number">
+                <span class="app-step-nav__circle-inner">4</span>
+              </span>
+              Add witnesses
+            </h3>
+          </div>
+        </li>
+        <li class="app-step-nav__step js-step">
+          <div class="app-step-nav__header js-toggle-panel" data-position="5">
+            <h3 class="app-step-nav__title">
+              <span class="app-step-nav__circle app-step-nav__circle--number">
+                <span class="app-step-nav__circle-inner">5</span>
+              </span>
+              Review and submit
+            </h3>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block footer %}
+  {{ govukFooter() }}
+{% endblock %}
